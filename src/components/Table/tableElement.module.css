@@ -1,0 +1,23 @@
+.td {
+  padding: 6px 16px;
+  text-align: left;
+  border-bottom: px solid #ddd;
+  border: 1px solid;
+  height: 25px;
+}
+
+.tdHour {
+  width: 1px;
+  text-align: left;
+  padding: 12px 16px;
+}
+
+.input {
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  color: #666666;
+  background-color: white;
+  font-size: 18px;
+}

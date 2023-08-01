@@ -1,0 +1,105 @@
+h1 {
+  margin: 0;
+}
+
+.headerContainer {
+  background-color: bisque;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.mainContainer {
+  display: flex;
+  padding: 15px 20px;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.authentificationDiv {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.loginButton {
+  background-color: rgb(239, 243, 244);
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  font-size: 14px;
+  text-align: center;
+  padding: 13px 0;
+  width: 100px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.loginButton:hover {
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+  background-color: rgba(239, 243, 244, 0.9);
+}
+
+.registerButton {
+  background-color: rgb(29, 155, 240);
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 13px 0;
+  width: 100px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.registerButton:hover {
+  box-shadow: rgba(213, 217, 217, 0.5) 0 2px 5px 0;
+  outline: 0;
+  background-color: rgba(29, 155, 240, 0.8);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logoContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.logoText {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0 0 0 65px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menuLink {
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+}
