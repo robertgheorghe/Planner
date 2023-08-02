@@ -21,11 +21,7 @@ const PlannerTable = () => {
     { hour: "22:00", task: "" },
     { hour: "23:00", task: "" },
   ]);
-  const showModal = () => {
-    setModalIsShown((prevState) => !prevState);
 
-    console.log(modalIsShown);
-  };
   const addTaskHandler = (task, time) => {
     const changedHour = newTask.map((elem) => {
       if (time == elem.hour) {
@@ -79,7 +75,7 @@ const PlannerTable = () => {
         </thead>
         <tbody className={classes.tbody}>
           {newTask.map((elem) => (
-            <TableElement elem={elem} removeTaskHandler={removeTaskHandler} />
+            <TableElement elem={elem} addTaskHandler={addTaskHandler} />
           ))}
         </tbody>
       </table>

@@ -1,7 +1,7 @@
 .td {
   padding: 6px 16px;
   text-align: left;
-  border-bottom: px solid #ddd;
+  border-bottom: 2px solid #ddd;
   border: 1px solid;
   height: 25px;
 }
@@ -20,4 +20,5 @@
   color: #666666;
   background-color: white;
   font-size: 18px;
+  margin: 0 auto;
 }

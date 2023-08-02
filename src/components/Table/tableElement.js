@@ -1,18 +1,19 @@
 import classes from "./tableElement.module.css";
 
 const TableElement = (props) => {
-  const removeTask = (event) => {
+  const addTask = (event) => {
     event.preventDefault();
-    props.removeTaskHandler(props.elem.hour);
+    props.addTaskHandler(event.target.value, props.elem.hour);
   };
   return (
     <tr>
       <td className={classes.tdHour}>{props.elem.hour}</td>
       <td className={classes.td}>
         <input
+          id="task"
           className={classes.input}
           value={props.elem.task}
-          onChange={() => {}}
+          onChange={addTask}
         />
       </td>
     </tr>
