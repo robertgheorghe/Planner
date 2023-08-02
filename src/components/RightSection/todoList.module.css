@@ -1,0 +1,21 @@
+.todoList {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+  text-align: center;
+  border-bottom: 1px solid #000;
+}
+
+.ulList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ulList > div > li {
+  border-bottom: 2px solid #dedede;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+}

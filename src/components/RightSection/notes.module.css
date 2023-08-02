@@ -1,0 +1,22 @@
+.notesWrapper textarea {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: 0;
+  border-bottom-color: #dedede;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-color: lightgray;
+  border-style: solid;
+}
+
+.notesWrapper textarea::placeholder {
+  font-weight: 500;
+  font-style: italic;
+  font-size: 18px;
+}

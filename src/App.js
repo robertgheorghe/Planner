@@ -1,12 +1,11 @@
-import "./App.css";
+import Content from "./components/Layout/Content";
 import Header from "./components/Layout/Header";
-import PlannerTable from "./components/Table/plannerTable";
 function App() {
   return (
-    <>
+    <div>
       <Header />
-      <PlannerTable />
-    </>
+      <Content />
+    </div>
   );
 }
 
