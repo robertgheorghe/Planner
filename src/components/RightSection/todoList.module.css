@@ -19,3 +19,59 @@
   font-weight: 500;
   text-transform: capitalize;
 }
+.deleteIcon {
+  background: url(deleteIcon.svg);
+}
+.checkMark {
+  background: url(check-mark.svg);
+}
+.button {
+  background: transparent;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lis {
+  flex-grow: 1;
+}
+.buttonm {
+  display: flex;
+  gap: 5;
+}
+.liscross {
+  flex-grow: 1;
+  text-decoration: line-through;
+}
+.input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  transition: border-color 0.3s ease;
+}
+.input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px #3498db;
+}
+.input:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+.inputButton {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.form {
+  display: flex;
+  align-items: space-between;
+}

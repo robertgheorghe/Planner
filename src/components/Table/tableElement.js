@@ -14,6 +14,7 @@ const TableElement = (props) => {
           className={classes.input}
           value={props.elem.task}
           onChange={addTask}
+          readOnly={!props.editPressed}
         />
       </td>
     </tr>
