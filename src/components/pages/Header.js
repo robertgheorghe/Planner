@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./header.module.css";
+import { Link } from "react-router-dom";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../config/firebase";
+import AuthContext from "../../config/auth-context";
 
 const Header = () => {
+  const authCtx = useContext(AuthContext);
+  const signOutHandler = () => {
+    signOut(auth)
+      .then(() => {
+        authCtx.logout();
+      })
+      .catch((error) => {
+        console.error(error);
+        // An error happened.
+      });
+  };
   return (
     <header className={styles.headerContainer}>
       <div className={styles.mainContainer}>
@@ -55,7 +70,9 @@ const Header = () => {
                 strokeWidth="1.5"
               />
             </svg>
-            <h1 className={styles.logoText}>Daily Planner</h1>
+            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+              <h1 className={styles.logoText}>Daily Planner</h1>
+            </Link>
           </div>
           <div className={styles.navLinks}>
             <div className={styles.links}>
@@ -68,8 +85,41 @@ const Header = () => {
               })}
             </div>
             <div className={styles.authentificationDiv}>
-              <div className={styles.loginButton}>Login</div>
-              <div className={styles.registerButton}>Register</div>
+              {!authCtx.isLogged && (
+                <Link
+                  to="login"
+                  style={{ textDecoration: "none" }}
+                  className={styles.loginButton}
+                >
+                  Login
+                </Link>
+              )}
+              {!authCtx.isLogged && (
+                <Link
+                  to="register"
+                  style={{ textDecoration: "none" }}
+                  className={styles.registerButton}
+                >
+                  Register
+                </Link>
+              )}
+              {authCtx.isLogged && (
+                <div
+                  style={{ textDecoration: "none" }}
+                  className={styles.loginButton}
+                >
+                  {authCtx.userName}
+                </div>
+              )}
+              {authCtx.isLogged && (
+                <div
+                  onClick={signOutHandler}
+                  style={{ textDecoration: "none" }}
+                  className={styles.registerButton}
+                >
+                  Logout
+                </div>
+              )}
             </div>
           </div>
         </div>

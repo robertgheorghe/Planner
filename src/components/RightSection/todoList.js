@@ -1,10 +1,16 @@
 import { useState } from "react";
 import classes from "./todoList.module.css";
+import AuthContext from "../../config/auth-context";
+import { useContext } from "react";
+import { auth } from "../../config/firebase";
 const TodoList = () => {
+  const authCtx = useContext(AuthContext);
+
   const [todosList, setTodosList] = useState([
     { id: "cook", can: false },
     { id: "dance", can: false },
     { id: "drink", can: false },
+    { id: auth.currentUser.displayName, can: authCtx.isLogged },
   ]);
   const [canAddTodo, setCanAddTodo] = useState(false);
   const inputHandler = () => {
@@ -13,6 +19,7 @@ const TodoList = () => {
 
   const addTodoHandler = (event) => {
     event.preventDefault();
+    console.log(auth.currentUser);
     setTodosList((prev) => [
       ...prev,
       { id: event.target.todo.value, can: false },
