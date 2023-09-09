@@ -7,10 +7,8 @@ import { Navigate } from "react-router-dom";
 const Content = () => {
   const authCtx = useContext(AuthContext);
   if (!authCtx.isLogged) {
-    console.log(authCtx);
     return <Navigate to="/login" replace />;
   } else {
-    console.log(authCtx);
   }
   return (
     <div className={classes.content}>

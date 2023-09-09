@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./plannerTable.module.css";
 import TableElement from "./tableElement";
+import { db } from "../../config/firebase";
+import { setDoc, doc, getDocs, query, collection, getDoc } from "firebase/firestore";
+import { auth } from "../../config/firebase";
 const PlannerTable = () => {
   const [newTask, setNewTask] = useState([
     { hour: "9:00", task: "" },
@@ -20,6 +23,15 @@ const PlannerTable = () => {
     { hour: "23:00", task: "" },
     { hour: "00:00", task: "" },
   ]);
+  useEffect(() => {
+    try {
+      const q = collection(db, "tables", auth.currentUser.uid, newTask)
+      const data = getDoc(q);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [newTask]);
   const [editPressed, setEditPressed] = useState(false);
 
   const addTaskHandler = (task, time) => {
@@ -38,6 +50,9 @@ const PlannerTable = () => {
     setNewTask(changedHour);
   };
   const editHandler = () => {
+    if (editPressed) {
+      setDoc(doc(db, "tables", auth.currentUser.uid), {newTask});
+    }
     setEditPressed((prev) => !prev);
   };
 

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyBkyOrCsIHLmKrfqhO2_2q59MYNWFQozoc",
   authDomain: "planner-e63c5.firebaseapp.com",
@@ -19,3 +20,5 @@ export const isLogged = onAuthStateChanged(auth, (user) => {
     return false;
   }
 });
+
+export const db = getFirestore(app);
