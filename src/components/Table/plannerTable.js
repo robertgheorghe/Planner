@@ -24,14 +24,25 @@ const PlannerTable = () => {
     { hour: "00:00", task: "" },
   ]);
   useEffect(() => {
-    try {
-      const q = collection(db, "tables", auth.currentUser.uid, newTask)
-      const data = getDoc(q);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }, [newTask]);
+    (async () => {
+      try {
+        const docRef = doc(db, "tables", auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          console.log(data.newTask)
+         
+          setNewTask(data.newTask);
+        } else {
+          
+        }
+      } catch (error) {
+        console.log({ error });
+      }
+    })();
+  }, []);
+
   const [editPressed, setEditPressed] = useState(false);
 
   const addTaskHandler = (task, time) => {

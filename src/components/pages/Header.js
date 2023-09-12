@@ -108,7 +108,7 @@ const Header = () => {
                   style={{ textDecoration: "none" }}
                   className={styles.loginButton}
                 >
-                  {authCtx.userName}
+                  {auth.currentUser.displayName}
                 </div>
               )}
               {authCtx.isLogged && (
